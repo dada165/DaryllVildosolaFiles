@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Dropdown</title>
+</head>
+<h3 style="font-family: cursive;">2. Write a JavaScript program to count and display the items of adropdown list, in an
+    alert window.</h3>
+
+<body style="background-color: antiquewhite;">
+    <div>
+        <center>
+            <select id="countries" style="font-size: 20px;">
+                <option>Ghana</option>
+                <option>Greece</option>
+                <option>Greenland</option>
+                <option>Grenada</option>
+                <option>Guatemala</option>
+                <option>Georgia</option>
+                <option>Germany</option>
+                <option>Guyana</option>
+                <option>Guinea-Bissau</option>
+                <option>Gabon</option>
+            </select>
+    </div><br><br>
+    </center>
+    <center><button onclick="counter()" style="font-size: 20px;color:magenta">Click for Details</button></center>
+</body>
+<script>
+    function counter() {
+        var te = " "
+        let count = document.getElementById("countries");
+        let newcount = count.getElementsByTagName("option");
+        let temp = newcount.length;
+        for (i = 0; i < count.length; i++) {
+            te += newcount[i].value + "\n";
+        }
+        alert(te + "There are " + temp + " Countries in the Drop Down");
+    }
+</script>
+
+</html>

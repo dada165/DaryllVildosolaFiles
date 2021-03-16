@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <b id="highlight" style="font-family: Arial;">In the beginning of my journey to become a college student, I thought that being in College is
+            easy like in Highscool.</b>
+        <p style="font-family: Arial;">Starting at college without all of my friends was something that
+            was worrying me. But it was finally here, today was the day that I
+            started to study at University Of San Carlos Talamban Campus, a known school in Cebu. My emotions were
+            all over the place. I did not know whether to laugh or cry. I felt scared,
+            excited, worried and nervous, all at the same time. My stomach was
+            turning at the thought of having to go to a new place, where everything
+            was unfamiliar to me, and also without my parents beside me. I felt
+            like I needed their presence, but it was down to me to find
+            out how to manage my life away from them. </p>
+        <center>
+            <button onmouseover=highlight() onmouseout=after()>Highlight the Bold Words</button>
+        </center>
+    </div>
+    <script>
+        function highlight() {
+            let newhigh = document.getElementById("highlight");
+            newhigh.style.color = "red";
+            newhigh = document.getElementById("highlight").innerText;
+            console.log(newhigh)
+        }
+        function after() {
+            let afterwards = document.getElementById("highlight");
+            afterwards.style.color = "black";
+        }
+
+    </script>
+
+</body>
+
+</html>

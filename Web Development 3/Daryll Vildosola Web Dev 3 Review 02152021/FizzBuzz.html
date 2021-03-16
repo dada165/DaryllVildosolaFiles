@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<h3 style="font-family: cursive;">1.Write a Javascript program wherein you have button1 and button2. Button1 would have
+    text inside displayed as “0”
+    (zero) and button2 would have text inside displayed as “Neutral”. Whenever you click on button1, the text displayed
+    inside button1 is then incremented by 1, and button2 will display “Fizz” if the number in button1 is divisible by 3,
+    “Buzz” if the number in button1 is divisible by 5, and “FizzBuzz” if the number in button1 is divisible by both 3
+    and 5.</h3>
+
+<body style="background-color: antiquewhite; padding-top: 10px;">
+    <div>
+        <center>
+            <button id="adding" onclick="add()" style="font-size: 40px;font-family: cursive;">0</button>
+            <button id="FIZZBUZZ" style="font-size: 40px;font-family: cursive;">Neutral</button>
+    </div>
+    </center>
+
+</body>
+<script>
+    var counter = 0;
+    function add() {
+        var value = parseInt(document.getElementById('adding').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        counter++;
+        console.log(counter);
+        document.getElementById('adding').innerText = counter;
+        newanoth = "Fizz"
+
+        if (counter % 3 == 0 && counter % 5 == 0) {
+            document.getElementById('FIZZBUZZ').innerText = "FizzBuzz";
+            document.getElementById('FIZZBUZZ').style.color = "magenta";
+            console.log("FizzBuzz");
+        }
+        else if (counter % 3 == 0) {
+            document.getElementById('FIZZBUZZ').innerText = "Fizz";
+            document.getElementById('FIZZBUZZ').style.color = "red";
+            console.log("Fizz");
+        } else if (counter % 5 == 0) {
+            document.getElementById('FIZZBUZZ').innerText = "Buzz";
+            document.getElementById('FIZZBUZZ').style.color = "Blue";
+            console.log("Buzz");
+        } else {
+            document.getElementById('FIZZBUZZ').innerText = "Neutral";
+            document.getElementById('FIZZBUZZ').style.color = "black";
+            console.log("Neutral");
+        }
+
+
+    }
+    function another() {
+        document.getElementById("another").innerText;
+        console.log("another")
+
+    }
+</script>
+
+</html>

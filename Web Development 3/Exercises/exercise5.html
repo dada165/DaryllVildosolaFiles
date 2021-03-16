@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion</title>
+</head>
+
+<body>
+    <div>
+        <center><label for="Number">Fahrenheit Number</label></center>
+        <center><input type="number" id="Number"><br></center><br>
+        <center><button onclick="conheit()">Convert to Celcius</button></center>
+        <center>
+            <h3>The Number in Celcius is</h3>
+            <h3 id="result">
+        </center>
+    </div>
+    <script>
+        function conheit() {
+            let answer = eval(document.getElementById("Number").value - 32) * 5 / 9;
+            document.getElementById("result").innerText = answer
+            console.log(answer)
+        }        
+    </script>
+</body>
+
+</html>

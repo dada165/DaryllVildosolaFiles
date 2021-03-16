@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Left</title>
+</head>
+
+<body>
+    <center>
+        <div>
+            <h1> DAY Checker</h1>
+            <h3 id="DateUp"></h3>
+            <h3 id="DateSetter"></h3>
+
+
+        </div>
+    </center>
+    <script>
+        var present = new Date();
+        var newPresent = present.getDay();
+        var newDate = new Date();
+        var setDate = newDate.setDate(21);
+        var result = document.getElementById("DateUp");
+        var DaysLeft = newDate.getDate() - present.getDate();
+        document.getElementById("DateSetter").innerText = DaysLeft + " Days left until next Sunday "
+
+        switch (newPresent) {
+            case 0:
+                result.innerText = "The day today is Sunday";
+                break;
+            case 1:
+                result.innerText = "The day today is Monday";
+                break;
+            case 2:
+                result.innerText = "The day today is Tuesday";
+                break;
+            case 3:
+                result.innerText = "The day today is Wednesday";
+                break;
+            case 4:
+                result.innerText = "The day today is Thursday";
+                break;
+            case 5:
+                result.innerText = "The day today is Friday";
+                break;
+            case 6:
+                result.innerText = "The day today is Saturday";
+                break;
+        }
+    </script>
+</body>
+
+</html>

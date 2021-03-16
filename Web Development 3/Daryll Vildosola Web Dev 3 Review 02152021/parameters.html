@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameters</title>
+</head>
+<h3 style="font-family: cursive;">3. Write a Javascript function where you take 3 parameters. These parameters would
+    represent the element you want to
+    create. You have the parameters id, element, and, text. Parameter id would represent the id of the element created,
+    element would represent the element you are creating (p, button, h1, etc.), and text being the text displayed in the
+    element created. The said element would then be added to the body.</h3>
+
+<body style="background-color: antiquewhite;">
+    <script>
+        function parameters(firstElement, secondElement, id) {
+            firstElement = document.createElement("h1");
+            secondElement = document.createTextNode("I am Daryll Gonzaga Vildosola. Currently studying in University of San Carlos Talamban Campus as a college student.");
+            thirdElement = document.createAttribute('thirdElement');
+            firstElement.setAttributeNode(thirdElement);
+            firstElement.appendChild(secondElement);
+            document.body.append(firstElement);
+            firstElement.style.color = "magenta";
+        }
+        parameters();
+    </script>
+</body>
+
+</html>

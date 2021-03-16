@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+
+            font-family:monospace;
+            font-size: 20px;
+            color: wheat;
+            background-size: cover;
+
+        }
+        input {
+            border-radius: 5px;
+            font-size: 30px;
+            text-align: center;
+            width: 40%;
+            border-radius: 5px;
+        }
+        button{
+            width: 28%;
+            font-family: fantasy;
+            font-size: 25px;
+            border-radius: 5px;
+            background-color: whitesmoke;
+
+        }
+        input{
+            font-family:monospace;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <center>
+
+        <br><br>
+        <p>3. Create a function that accepts a date and will determine if the said date is   a weekend.</p>
+        <div><br><br>
+            Enter a date (Ex:March 6, 2021): <br><input type="text" id="date"><br><br>
+            <button id="check">CHECK</button><br><br>
+            <input type="text" id="output">
+        </div>
+        
+    </center>
+
+    <script>
+        $("#check").click(function () {
+            newDate = new Date($("#date").val());
+            let currentDay = newDate.getDay();
+            if (currentDay === 6 || currentDay === 0) {
+                $("#output").val("weekend");
+            }
+            if(currentDay != 6 || currentDay === 0){
+                $("#output").val("weekday");
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

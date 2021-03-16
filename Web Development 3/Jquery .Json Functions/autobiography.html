@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobiography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Image/icon.png" type="image/x-icon">
+
+</head>
+<style>
+    #design {
+        background-image: url("Image/bg7.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .9;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    #animate {
+        background-color: black;
+    }
+
+    #quote-box {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        line-height: .5;
+    }
+
+    .quote {
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.1;
+        position: relative;
+        margin: 0;
+    }
+    .modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+
+<body onload="animation()">
+
+    <div id="animate">
+        <div id="loader"></div>
+    </div>
+
+    <div id="size" style="display: none;" id="bg-color">
+        <div class="container">
+            <div id="quote-box">
+            </div>
+        </div>
+        <center>
+            <div id="design">
+                <img id="action" src="Image/dar.png" alt="Daryll G. Vildosola" width="150" height="150">
+                <h4 id="define">Daryll G. Vildosola</h4>
+                <button id="buttonclicked">Animate Profile</button><br><br>
+                <button id="ajax">Show Bashers</button><br>
+                <button id="hide">Hide Bashers</button><br>
+                <h3 id="charac">I am a soft-hearted person.<br> I like playing basketball, badminton and
+                    volleyball.<br>
+                    I am currently studying at University of San Carlos Talamban Campus.</h3>
+                <center>
+                    <h5 style="font-family: monospace; display: none;color: white;">
+                        Hide Testimonies</h5>
+                    <h1 id="actions">TESTIMONIES</h1>
+                    <img id="testimony" src="Image/rhea.png" alt="Rhea Amancio"
+                        data-link="https://www.linkedin.com/in/rhea-amancio-78b4601a2/">
+                    <p id="set">Rhea Amancio</p>
+                    <p id="testimony">I use to call Daryll as wangkig.<br>
+                        He is a good looking man.<br>
+                        A good, kind, sweet, and caring persom that I have in PN.<br>
+                        He is intelligent but sometimes get lazy of doing activities.<br>
+                        I wish you still be my awesome friend till the end. Merci! </p>
+                    <img id="test" src="Image/happy.png" alt="Jolly Borbon"
+                        data-link="https://www.linkedin.com/in/jolly-borbon-3468981a1/">
+                    <p id="set">Jolly Borbon</p>
+                    <p id="testimony">Daryll is a very sweet man, he is very friendly.<br>
+                        He always cares for his friends.<br>
+                        He always smile’s in public places,<br>
+                        he is very sensitive and a handsome man.</p>
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <center>
+
+                        <div style="padding-bottom: 10px;">
+                            <table id="tabledata">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </center>
+            </div>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var animate;
+    function animation() {
+        animate = setTimeout(showPage, 3000);
+    }
+    function showPage() {
+        document.getElementById("animate").style.display = "none";
+        document.getElementById("size").style.display = "block";
+    }
+    $(document).ready(function () {
+
+        $("#action").click(function () {
+            $("p").show();
+            $("img").fadeIn();
+            $("button").hide();
+            $("h1").show();
+            $("h5").show();
+            $("#tabledata").hide();
+            $("#hide").hide();
+            $("h4").show();
+        });
+        $("h5").click(function () {
+            $("p").hide();
+            $("#testimony").hide();
+            $("#test").hide();
+            $("h1").hide();
+            $("input").hide();
+            $("h5").hide();
+        })
+        $("#hide").click(function () {
+            $("#tabledata").hide();
+            $("#hide").hide();
+        })
+        $("#action").mouseover(function () {
+            $("h3").fadeIn(1000);
+            $("h4").hide();
+            $("button").hide();
+            $("input").hide();
+            $("h5").hide();
+        });
+        $("#action").mouseout(function () {
+            $("h3").hide();
+            $("h4").show();
+            $("button").show();
+            $("#hide").hide();
+            $("#h5").show();
+        });
+        $("#testimony").dblclick(function () {
+            window.location.href = $(this).data("link");
+        });
+        $("#test").dblclick(function () {
+            window.location.href = $(this).data("link");
+        });
+        $("#buttonclicked").click(function () {
+            var img = $("#action");
+            if (img.width() < 200) {
+                img.animate({ width: "201", height: "201" }, 1000)
+            }
+            else {
+
+                img.animate({ width: img.attr("width"), height: img.attr("height") }, 1000)
+            }
+        })
+        $("#ajax").on("click", function () {
+            $("#tabledata").show();
+            $("#hide").show();
+
+            $.ajax({
+                url: "http://jsonplaceholder.typicode.com/users",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index) {
+                        $("#tabledata").append('<tr><td>' + data[index].name + '</td><td>' + data[index].email + '</td></tr>')
+                    })
+
+                }
+            })
+        })
+
+    });
+    function printQuote() {
+    };
+    printQuote();
+    setInterval(printQuote, 1000);
+    function colorValue() {
+        var randomColor = Math.floor(Math.random() * 256);
+        return randomColor;
+    }
+    function randomRGBValue() {
+        var red = colorValue();
+        var green = colorValue();
+        var blue = colorValue();
+        var backgroundColor = "rgb(" + red + " " + green + " " + blue + ")";
+        document.body.style.background = backgroundColor;
+    };
+    randomRGBValue();
+    setInterval(randomRGBValue, 1000);
+
+
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("testimony");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
+
+</html>

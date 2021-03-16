@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="enable" onclick="anotherone()">Click Me!</button>
+        <button id="disable" onclick=disable()>Click Me!</button>
+    </div>
+    <script>
+        function disable() {
+            document.getElementById("enable").disabled = true;
+            document.getElementById("enable").innerHTML = "You cant click Me!!"
+        }
+        function anotherone() {
+            document.getElementById("disable").disabled = true;
+            document.getElementById("disable").innerHTML = "You cant click Me!!"
+        }
+    </script>
+
+
+</body>
+
+</html>

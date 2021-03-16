@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button</title>
+</head>
+<h3 style="font-family: cursive;">2. Write a Javascript program to manipulate 3 radio buttons. Have 2 buttons, checkAll
+    and uncheckAll. Upon clicking
+    checkAll, all 3 radio buttons must be checked. For uncheckAll, all 3 radio buttons must be unchecked. If for
+    example, one radio button is checked among the three and then you click either checkAll or uncheckAll, same logic
+    must go through.</h3>
+
+<body style="background-color: antiquewhite;">
+    <div style="padding-top: 30px;">
+        <center>
+            <input type="radio"><b style="font-family: cursive;">Love Radio</b>
+            <input type="radio"><b style="font-family: cursive;">EnergyFM</b>
+            <input type="radio"><b style="font-family: cursive;">BarangayLS</b>
+            <br><br>
+            <button style="font-size: 20px; font-family: fantasy;" onclick="checked()">CheckAll</button>
+            <button style="font-size: 20px; font-family: fantasy;" onclick="unchecked()">UncheckAll</button>
+    </div>
+    </center>
+</body>
+<script>
+    var newStored = document.getElementsByTagName('input');
+
+    function checked() {
+        for (var i = 0; i < newStored.length; i++) {
+            newStored[i].checked = true;
+        }
+    }
+    function unchecked() {
+        for (var i = 0; i < newStored.length; i++) {
+            newStored[i].checked = false;
+        }
+    }
+</script>
+
+</html>

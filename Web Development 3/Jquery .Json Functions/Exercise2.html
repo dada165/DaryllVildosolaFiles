@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 20px;
+
+        }
+        input {
+            font-size: 25x;
+            text-align: center;
+            width: 50%;
+            border-radius: 10px;
+        }
+        button{
+            width: 10%;
+            font-family: fantasy;
+            font-size: 25px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+
+        }
+        #date{
+            font-family:monospace;
+            font-size: 25px;
+            width: 17%;
+        }
+        #output{
+            font-family:monospace;
+            text-align: center;
+            width: 17%;
+            font-size: 25px;
+        }
+        p{
+            font-size: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+    <br><br>
+    <p>2. Create a function that accepts a date in DD/MM/YY format and identify the month of the said date.
+    </p><br><br>
+    <div >
+        Input a date (DD/MM/YY): <br><input type="text" id="date"> <br><br>
+        <button>Output</button><br><br>
+        Month:<input id="output" type=text style="margin-left:10px;">
+    </div>
+</center>
+
+    <script>
+        
+        var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        $("button").click(function () {
+            var date = ($("#date").val());
+            var month = date.split("/");
+            $("#output").val(monthName[parseInt(month[1]) - 1]);
+            
+        })
+    </script>
+
+</body>
+
+</html>
